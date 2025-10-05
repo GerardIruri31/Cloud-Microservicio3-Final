@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "e2d68a0c-db9b-4e06-8ac8-179822a0a510",
+		"name": "Proy. Parcial Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43479410",
+		"_collection_link": "https://gerard-9690572.postman.co/workspace/Gerard's-Workspace~89e55100-a3c3-41ef-8fca-cf2ad92b2f1b/collection/43479410-e2d68a0c-db9b-4e06-8ac8-179822a0a510?action=share&source=collection_link&creator=43479410"
+	},
+	"item": [
+		{
+			"name": "userApifyCallByUsername",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apifyToken\": \"apify_api_89Xx79YhvkBxEWUnnAyVuQpsolqN943YHcqo\",\r\n    \"excludePinnedPosts\": true,\r\n    \"resultsPerPage\": 1000,\r\n    \"newestPostDate\": \"2025-03-13\",                                  \r\n    \"oldestPostDate\": \"2025-03-11\",                                     \r\n    \"profiles\": [\"leslie_lovespages\"],\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/apify-connection/normalized",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apify-connection",
+						"normalized"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminApifyCallByUsername",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apifyToken\": \"apify_api_89Xx79YhvkBxEWUnnAyVuQpsolqN943YHcqo\",\r\n    \"excludePinnedPosts\": true,\r\n    \"resultsPerPage\": 5,\r\n    \"newestPostDate\": \"2025-03-13\",                                  \r\n    \"oldestPostDate\": \"2025-03-11\",                                     \r\n    \"profiles\": [\"leslie_lovespages\"],\r\n    \"adminId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/apify-connection/admin/normalized",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apify-connection",
+						"admin",
+						"normalized"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userDbQueries",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n //tmb acepta otros filtros más: separar por comas\r\n /* String tiktokUsernames;  String postId; LocalDate datePostedFrom;\r\n    LocalDate datePostedTo;  String postURL;  Integer minViews;\r\n     Integer maxViews; Integer minLikes; Integer maxLikes; Integer minTotalInteractions;\r\n     Integer maxTotalInteractions; Double minEngagement; Double maxEngagement; \r\n     String hashtags; String soundId; String soundURL; String regionPost;\r\n */ \r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/dbquery/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"dbquery",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminApifyCallByHashtags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  // num máximo de post por hashtag\r\n  \"resultsPerPage\": 5,\r\n  \"adminId\": 1,\r\n  \"excludePinnedPosts\":true,\r\n  \"hashtags\": [\"comedia\",\"entretenimiento\"],\r\n  \"profileSorting\": \"latest\",\r\n  \"apifyToken\":\"apify_api_89Xx79YhvkBxEWUnnAyVuQpsolqN943YHcqo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/apify-connection/admin/normalized",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apify-connection",
+						"admin",
+						"normalized"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminApifyCallByKeyword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  // num máximo de post por keyword\r\n  \"resultsPerPage\": 5,\r\n  \"adminId\": 1,\r\n  \"excludePinnedPosts\":true,\r\n  \"searchQueries\": [\"balon de oro\",\"marcha peru\"],\r\n  \"profileSorting\": \"latest\",\r\n  \"apifyToken\":\"apify_api_89Xx79YhvkBxEWUnnAyVuQpsolqN943YHcqo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/apify-connection/admin/normalized",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apify-connection",
+						"admin",
+						"normalized"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
